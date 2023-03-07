@@ -147,7 +147,10 @@ enum Slope
   Slope_12,
   Slope_24,
   Slope_36,
-  Slope_48
+  Slope_48,
+    Slope_60,
+    Slope_72,
+    Slope_84,
 };
 
 struct ChainSettings
@@ -163,7 +166,7 @@ ChainSettings getChainSettings(juce::AudioProcessorValueTreeState& apvts);
 
 using Filter = juce::dsp::IIR::Filter<float>;
 
-using CutFilter = juce::dsp::ProcessorChain<Filter, Filter, Filter, Filter>;
+using CutFilter = juce::dsp::ProcessorChain<Filter, Filter, Filter, Filter, Filter, Filter, Filter>;
 
 using MonoChain = juce::dsp::ProcessorChain<CutFilter, Filter, CutFilter>;
 
@@ -195,9 +198,24 @@ void updateCutFilter(ChainType& chain,
   chain.template setBypassed<1>(true);
   chain.template setBypassed<2>(true);
   chain.template setBypassed<3>(true);
+  chain.template setBypassed<4>(true);
+  chain.template setBypassed<5>(true);
+  chain.template setBypassed<6>(true);
 
   switch( slope )
   {
+      case Slope_84:
+      {
+          update<6>(chain, coefficients);
+      }
+      case Slope_72:
+      {
+          update<5>(chain, coefficients);
+      }
+      case Slope_60:
+      {
+          update<4>(chain, coefficients);
+      }
       case Slope_48:
       {
           update<3>(chain, coefficients);

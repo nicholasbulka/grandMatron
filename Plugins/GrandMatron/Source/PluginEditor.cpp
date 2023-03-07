@@ -667,6 +667,7 @@ GrandMatronAudioProcessorEditor::GrandMatronAudioProcessorEditor (GrandMatronAud
   lowPassSlopeSlider.labels.add({0.0f, "12"});
   lowPassSlopeSlider.labels.add({1.f, "48"});
 
+
   for( auto* comp : getComps() )
   {
       addAndMakeVisible(comp);

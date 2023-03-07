@@ -275,7 +275,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout GrandMatronAudioProcessor::c
                                                          20000.f));
 
   juce::StringArray stringArray;
-  for( int i = 0; i < 4; ++i )
+  for( int i = 0; i < 7; ++i )
   {
       juce::String str;
       str << (12 + i*12);
