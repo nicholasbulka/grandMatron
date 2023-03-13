@@ -9,6 +9,8 @@
 #include <shared_plugin_helpers/shared_plugin_helpers.h>
 
 #include <array>
+#include <RTNeural.h>
+
 template<typename T>
 struct Fifo
 {
