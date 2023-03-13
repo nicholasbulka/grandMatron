@@ -1,4 +1,4 @@
-project(MatriarchFilter VERSION 0.0.1)
+project(MatriarchFilter VERSION 1.0.1)
 
 set (BaseTargetName MatriarchFilter)
 
